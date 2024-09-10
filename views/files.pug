@@ -1,0 +1,39 @@
+- var localPath = localPath
+- var iconFile = icon
+html
+    head
+        link(href="/static/main.css" rel="stylesheet")
+        script(src="/static/main.js",defer=true)
+        script(src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module")
+        link(href="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.css" rel="stylesheet")
+        script(src="https://npmcdn.com/pdfjs-dist/web/compatibility.js")
+        script(src="https://npmcdn.com/pdfjs-dist/build/pdf.js")
+        script(src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js")
+    body 
+        include partial/navigation.pug
+        main    
+            ul
+                each val, index in files
+                    if val.isDir
+                        div(class='folder_wrapper')
+                            include partial/folder_closed_icon.pug
+                            li
+                                a(href=val.href)=val.name
+                    else 
+                        div(class='folder_wrapper')
+                            include partial/file_icon.pug
+                            li
+                                a(data-href=val.href, data-file=true)=val.name
+        div(class='footer')
+            if backPath !== '/'
+                if isLast   
+                    div
+                        a(id="page-closer")= 'back'
+                else 
+                    div
+                        a(href=backPath)= 'back'
+        div(class='dialog-viewer')
+            button(id="dialog-viewer-closer")
+                include partial/dialog_closer.pug
+            div(id='content-dialog')
+

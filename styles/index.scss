@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+}
+
+main {
+    padding: 5rem;
+    max-height: calc(100vh - 10rem);
+    overflow-y: scroll;
+}
+
+.navigation {
+    height: 5rem;
+    width: 100vw;
+    background: grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    .logo{
+        img{
+            height: 50px;
+            width: 80px;
+        }
+    }
+}
+
+.folder_wrapper {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+
+    svg {
+        width: 60px;
+    }
+}
+
+ul {
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+
+    li {
+        list-style-type: none;
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: 4rem;
+        }
+    }
+}
+
+.pdf-canvas{
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    overflow-y: scroll;
+    max-height: 100vh;
+}
+*[data-file] {
+    cursor: pointer;
+}
+#page-closer{
+    cursor: pointer;
+}
+.dialog-viewer {
+    position: absolute;
+   
+    top: 0vh;
+    left: 0vw;
+   
+    width: 100vw;
+    z-index: 1000000;
+    background-color: grey;
+    display: none;
+}
+#dialog-viewer-closer{
+    position: absolute;
+    right: 5%;
+    top: 5%;
+}
+#content-dialog{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.open-dialog {
+    display: block;
+}
+
+.footer {
+    min-height: 5rem;
+    padding: 2% 0;
+    width: 100vw;
+    background-color: grey;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5rem;
+
+    a {
+        height: 4rem;
+        width: auto;
+        border-width: 2px;
+        border-style: solid;
+        padding:2px;
+        border-color: black;
+        font-size: 4rem;
+        text-decoration: none;
+        color: black;
+    }
+
+}
+#image-loader{
+    max-width: 80%;
+    max-height: 100vh;
+}

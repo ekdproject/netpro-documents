@@ -1,0 +1,11 @@
+/*! dat.gui */
+
+/*! three */
+
+/*! three/addons/controls/OrbitControls.js */
+
+/*! three/examples/jsm/loaders/STLLoader */
+
+/*!****************************!*\
+  !*** ./app/plugins/stl.js ***!
+  \****************************/

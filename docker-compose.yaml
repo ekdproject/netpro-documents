@@ -1,0 +1,20 @@
+version: "2"
+services:
+  node:
+    build: .
+    image: app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - cifs_mount:/root/data/
+    expose:
+      - "1234"
+    ports: # use if it is necessary to expose the container to the host machine
+      - "1234:1234"
+volumes:
+    cifs_mount:
+      driver: local
+      driver_opts:
+        type: cifs
+        device: //192.168.2.80/store/condivisa/ANTONIO MOCCIA/root
+        o: username=antonio.moccia,password=Aprile2021.
